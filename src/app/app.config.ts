@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
                 preset: Material,
                 options: {
                     primary: 'sky',
-                    surface: 'soho'
+                    surface: 'zinc'
                 }
             },
             ripple: true
