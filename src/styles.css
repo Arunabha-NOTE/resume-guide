@@ -1,2 +1,26 @@
 @import "tailwindcss";
-@plugin "tailwindcss-primeui";
+
+/* Global reset and layout */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: block;
+  height: 100vh;
+}
+
+/* Ensure proper typography */
+.prose {
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  scroll-margin-top: 100px; /* Account for fixed navbar */
+}

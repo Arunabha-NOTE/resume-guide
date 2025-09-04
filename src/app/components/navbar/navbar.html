@@ -1,0 +1,26 @@
+<p-menubar [model]="leftItems" class="w-full h-16 border-0">
+  <ng-template pTemplate="end">
+    <div class="flex gap-2">
+      <ng-container *ngFor="let item of rightItems">
+        <a 
+          *ngIf="item.url; else buttonTemplate"
+          [href]="item.url" 
+          [target]="item.target || '_self'"
+          class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
+        >
+          <i *ngIf="item.icon" [class]="item.icon"></i>
+          {{ item.label }}
+        </a>
+        <ng-template #buttonTemplate>
+          <button 
+            (click)="item.command && item.command({})"
+            class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
+          >
+            <i *ngIf="item.icon" [class]="item.icon"></i>
+            {{ item.label }}
+          </button>
+        </ng-template>
+      </ng-container>
+    </div>
+  </ng-template>
+</p-menubar>
