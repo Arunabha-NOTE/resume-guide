@@ -54,7 +54,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* Sidebar container scrollbar styling */
 .sidebar-container {
   scrollbar-width: thin;
-  scrollbar-color: rgba(59, 130, 246, 0.6) transparent;
+  scrollbar-color: var(--surface-border) transparent;
 }
 
 .sidebar-container::-webkit-scrollbar {
@@ -66,13 +66,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .sidebar-container::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.6);
+  background: var(--surface-border);
   border-radius: 6px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid var(--surface-200);
 }
 
 .sidebar-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.8);
+  background: var(--surface-300);
 }
 
 /* Remove scrollbar arrows */

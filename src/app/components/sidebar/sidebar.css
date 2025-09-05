@@ -2,11 +2,7 @@
   display: block;
   width: 100%;
   min-height: 100%;
-  background: rgba(59, 130, 246, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-right: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  background: transparent;
   position: relative;
 }
 
@@ -17,42 +13,49 @@
 }
 
 :host ::ng-deep .p-panelmenu {
-  border: none;
-  background: transparent;
+  border: none !important;
+  background: transparent !important;
   width: 100%;
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-panel {
-  border: none;
+  border: none !important;
+  background: transparent !important;
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-header {
-  background: transparent;
-  border: none;
+  background: transparent !important;
+  border: none !important;
   margin: 0.25rem 0;
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-content {
-  border: none;
-  background: transparent;
+  border: none !important;
+  background: transparent !important;
   margin-top: 0.25rem;
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
-  background: transparent;
+  background: transparent !important;
+  border: none !important;
 }
 
 :host ::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Dark mode support - maintain glassmorphic effect on sidebar only */
+/* Remove any focus or active state blue colors */
+:host ::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content:focus,
+:host ::ng-deep .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content:active {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :host {
-    background: rgba(59, 130, 246, 0.1) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(59, 130, 246, 0.2);
+    background: transparent !important;
   }
   
   :host ::ng-deep .p-panelmenu .p-panelmenu-header {
