@@ -31,11 +31,9 @@ export class App implements OnInit {
       target: '_blank'
     },
     {
-      label: 'Resume',
-      command: () => {
-        // open resume (place a resume PDF under /assets/resume.pdf or change as needed)
-        window.open('/assets/resume.pdf', '_blank');
-      }
+      label: 'Monoresume',
+      url: 'https://monoresume.com/',
+      target: '_blank'
     }
   ];
 
