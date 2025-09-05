@@ -5,12 +5,13 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { Navbar } from './components/navbar/navbar';
 import { Sidebar } from './components/sidebar/sidebar';
 import { MenuItem } from 'primeng/api';
+import { Card } from "primeng/card";
 
 declare let Lenis: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenubarModule, PanelMenuModule, Navbar, Sidebar],
+  imports: [RouterOutlet, MenubarModule, PanelMenuModule, Navbar, Sidebar, Card],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -24,7 +25,7 @@ export class App implements OnInit {
 
   rightMenuItems: MenuItem[] = [
     {
-      label: 'GitHub',
+      label: '',
       icon: 'pi pi-github',
       url: 'https://github.com/Arunabha-NOTE/resume-guide',
       target: '_blank'
@@ -44,8 +45,9 @@ export class App implements OnInit {
       routerLink: '/introduction',
       expanded: true,
       items: [
+        { label: 'Overview', command: () => this.scrollToSection('overview') },
         { label: 'Getting Started', command: () => this.scrollToSection('getting-started') },
-        { label: 'Overview', command: () => this.scrollToSection('overview') }
+        { label: 'General Guidelines', command: () => this.scrollToSection('general-guidelines') }
       ]
     },
     {

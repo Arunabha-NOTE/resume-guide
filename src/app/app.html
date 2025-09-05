@@ -1,16 +1,16 @@
 <!-- Fixed navbar at top -->
-<div class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface">
+<div class="fixed top-0 left-0 right-0 z-50 h-12 bg-surface">
   <app-navbar [leftItems]="leftMenuItems" [rightItems]="rightMenuItems"></app-navbar>
 </div>
 
 <!-- Fixed sidebar -->
-<div class="fixed left-0 top-12 bottom-0 w-72 bg-surface overflow-y-auto z-40">
+<div class="fixed left-0 top-12 w-72 bg-surface z-40 sidebar-container" style="height: calc(100vh - 3rem); overflow-y: auto; overflow-x: hidden;">
   <app-sidebar [items]="panelMenuItems"></app-sidebar>
 </div>
 
 <!-- Main content area -->
-<div class="ml-72 pt-16 min-h-screen content-glass">
-  <div class="p-8 max-w-none">
+<div class="ml-72 pt-12 min-h-screen content-glass content-area">
+  <p-card class="p-8 max-w-none">
     <router-outlet></router-outlet>
-  </div>
+  </p-card>
 </div>

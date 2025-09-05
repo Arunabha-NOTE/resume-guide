@@ -14,8 +14,9 @@ export const appConfig: ApplicationConfig = {
             theme: {
                 preset: Material,
                 options: {
-                    primary: 'sky',
-                    surface: 'zinc'
+                    primary: 'blue',
+                    surface: 'slate',
+                    darkModeSelector: '.dark'
                 }
             },
             ripple: true
