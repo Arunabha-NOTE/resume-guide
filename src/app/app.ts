@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
@@ -6,6 +7,7 @@ import { Navbar } from './components/navbar/navbar';
 import { Sidebar } from './components/sidebar/sidebar';
 import { MenuItem } from 'primeng/api';
 import { Card } from "primeng/card";
+import { filter } from 'rxjs/operators';
 
 declare let Lenis: any;
 
@@ -16,6 +18,8 @@ declare let Lenis: any;
   styleUrl: './app.css'
 })
 export class App implements OnInit {
+  constructor(private router: Router) {}
+
   leftMenuItems: MenuItem[] = [
     {
       label: 'Resume Guide',
@@ -49,6 +53,14 @@ export class App implements OnInit {
       ]
     },
     {
+      label: 'Header',
+      routerLink: '/header',
+      items: [
+        { label: 'Header Format', command: () => this.scrollToSection('header-format') },
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('header-dos-donts') }
+      ]
+    },
+    {
       label: 'Education',
       routerLink: '/education',
       items: [
@@ -61,7 +73,7 @@ export class App implements OnInit {
       routerLink: '/experience',
       items: [
         { label: 'Work Experience', command: () => this.scrollToSection('work-experience') },
-        { label: 'Internships', command: () => this.scrollToSection('internships') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('experience-dos-donts') }
       ]
     },
     {
@@ -69,7 +81,7 @@ export class App implements OnInit {
       routerLink: '/skills',
       items: [
         { label: 'Technical Skills', command: () => this.scrollToSection('technical-skills') },
-        { label: 'Soft Skills', command: () => this.scrollToSection('soft-skills') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('skills-dos-donts') }
       ]
     },
     {
@@ -77,7 +89,7 @@ export class App implements OnInit {
       routerLink: '/projects',
       items: [
         { label: 'Personal Projects', command: () => this.scrollToSection('personal-projects') },
-        { label: 'Professional Projects', command: () => this.scrollToSection('professional-projects') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('projects-dos-donts') }
       ]
     },
     {
@@ -85,7 +97,7 @@ export class App implements OnInit {
       routerLink: '/achievements',
       items: [
         { label: 'Awards', command: () => this.scrollToSection('awards') },
-        { label: 'Recognition', command: () => this.scrollToSection('recognition') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('achievements-dos-donts') }
       ]
     },
     {
@@ -93,7 +105,7 @@ export class App implements OnInit {
       routerLink: '/certificates',
       items: [
         { label: 'Professional Certificates', command: () => this.scrollToSection('professional-certs') },
-        { label: 'Online Courses', command: () => this.scrollToSection('online-courses') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('certificates-dos-donts') }
       ]
     },
     {
@@ -101,7 +113,7 @@ export class App implements OnInit {
       routerLink: '/leadership',
       items: [
         { label: 'Leadership Roles', command: () => this.scrollToSection('leadership-roles') },
-        { label: 'Extracurricular Activities', command: () => this.scrollToSection('extracurricular') }
+        { label: "Do's and Don'ts", command: () => this.scrollToSection('leadership-dos-donts') }
       ]
     },
     {
@@ -111,7 +123,19 @@ export class App implements OnInit {
   ];
 
   ngOnInit(): void {
-    // Application initialization complete
+    // Listen for route changes and scroll to top
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        // Scroll to top of the content area
+        const contentArea = document.querySelector('.content-area');
+        if (contentArea) {
+          contentArea.scrollTo(0, 0);
+        } else {
+          // Fallback to window scroll
+          window.scrollTo(0, 0);
+        }
+      });
   }
 
   scrollToSection(sectionId: string) {

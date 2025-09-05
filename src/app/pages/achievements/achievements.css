@@ -1,0 +1,173 @@
+:host {
+	display: block;
+}
+
+.achievements-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 3rem;
+}
+
+/* Section Layout */
+.achievements-section,
+.dos-donts-section {
+	margin-bottom: 2rem;
+}
+
+/* Section Headers */
+.section-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 0 2rem 0;
+	border-bottom: 2px solid var(--surface-border);
+	margin-bottom: 2rem;
+}
+
+.header-icon {
+	font-size: 2rem;
+	color: var(--primary-500);
+}
+
+.header-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin: 0;
+	color: var(--text-color);
+}
+
+/* Section Content */
+.section-content {
+	padding: 0;
+}
+
+.intro-text {
+	font-size: 1.25rem;
+	line-height: 1.8;
+	margin-bottom: 1.5rem;
+	color: var(--text-color-secondary);
+}
+
+/* Achievements Example */
+.achievements-example {
+	background: var(--surface-100);
+	border: 1px solid var(--surface-border);
+	border-radius: 8px;
+	padding: 2rem;
+	margin: 2rem 0;
+}
+
+.example-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	color: var(--text-color);
+}
+
+.achievement-entries {
+	font-family: 'Times New Roman', serif;
+	line-height: 1.4;
+}
+
+.achievement-entry {
+	margin-bottom: 1.5rem;
+}
+
+.achievement-entry:last-child {
+	margin-bottom: 0;
+}
+
+.achievement-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 0.5rem;
+}
+
+.achievement-name {
+	font-size: 1.125rem;
+	font-weight: bold;
+	color: var(--text-color);
+	flex: 1;
+}
+
+.achievement-date {
+	font-size: 1rem;
+	color: var(--text-color-secondary);
+	font-style: italic;
+	flex-shrink: 0;
+	text-align: right;
+}
+
+.achievement-description {
+	font-size: 1rem;
+	color: var(--text-color-secondary);
+	line-height: 1.5;
+	margin-top: 0.5rem;
+}
+
+/* Do's and Don'ts Sections */
+.dos-section,
+.donts-section {
+	margin-bottom: 2.5rem;
+}
+
+.subsection-title {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--surface-border);
+}
+
+.dos-title {
+	color: var(--green-500);
+}
+
+.donts-title {
+	color: var(--red-500);
+}
+
+/* Guidelines List */
+.guidelines-list {
+	list-style: disc;
+	padding-left: 2rem;
+	margin: 1.5rem 0;
+}
+
+.guideline-item {
+	padding: 0.75rem 0;
+	font-size: 1.125rem;
+	line-height: 1.7;
+	border-bottom: 1px solid var(--surface-border);
+}
+
+.guideline-item:last-child {
+	border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.section-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	
+	.header-title {
+		font-size: 2rem;
+	}
+	
+	.achievements-example {
+		padding: 1.5rem;
+	}
+	
+	.achievement-header {
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	
+	.achievement-date {
+		text-align: left;
+	}
+}

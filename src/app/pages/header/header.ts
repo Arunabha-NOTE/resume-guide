@@ -4,11 +4,11 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-leadership',
+  selector: 'app-header',
   standalone: true,
   imports: [CommonModule, CardModule, ButtonModule],
-  templateUrl: './leadership.html',
-  styleUrls: ['./leadership.css']
+  templateUrl: './header.html',
+  styleUrls: ['./header.css']
 })
-export class Leadership {
+export class Header {
 }

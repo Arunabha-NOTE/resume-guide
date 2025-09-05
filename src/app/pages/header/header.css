@@ -2,14 +2,14 @@
 	display: block;
 }
 
-.experience-grid {
+.header-grid {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 3rem;
 }
 
 /* Section Layout */
-.experience-section,
+.header-section,
 .dos-donts-section {
 	margin-bottom: 2rem;
 }
@@ -48,8 +48,8 @@
 	color: var(--text-color-secondary);
 }
 
-/* Experience Example */
-.experience-example {
+/* Header Example */
+.header-example {
 	background: var(--surface-100);
 	border: 1px solid var(--surface-border);
 	border-radius: 8px;
@@ -64,65 +64,52 @@
 	color: var(--text-color);
 }
 
-.experience-entries {
+.resume-header {
 	font-family: 'Times New Roman', serif;
-	line-height: 1.4;
+	text-align: center;
+	line-height: 1.3;
 }
 
-.experience-entry {
-	margin-bottom: 1.5rem;
-}
-
-.experience-entry:last-child {
-	margin-bottom: 0;
-}
-
-.experience-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
+.name-section {
 	margin-bottom: 0.5rem;
 }
 
-.company-position {
-	flex: 1;
-}
-
-.company-name {
-	font-size: 1.125rem;
+.full-name {
+	font-size: 1.25rem;
 	font-weight: bold;
 	color: var(--text-color);
 	margin-bottom: 0.25rem;
+	letter-spacing: 0.5px;
 }
 
-.position-title {
+.location {
 	font-size: 1rem;
-	font-style: italic;
+	color: var(--text-color-secondary);
+	margin-bottom: 0.5rem;
+}
+
+.contact-section {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.5rem 2rem;
+	font-size: 0.9rem;
+}
+
+.contact-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 	color: var(--text-color-secondary);
 }
 
-.date-location {
-	text-align: right;
-	flex-shrink: 0;
+.contact-icon {
+	font-size: 1rem;
+	color: var(--primary-500);
 }
 
-.experience-date {
-	font-size: 1rem;
+.contact-text {
 	color: var(--text-color-secondary);
-	margin-bottom: 0.25rem;
-}
-
-.experience-location {
-	font-size: 1rem;
-	color: var(--text-color-secondary);
-	font-style: italic;
-}
-
-.experience-description {
-	font-size: 1rem;
-	color: var(--text-color-secondary);
-	line-height: 1.5;
-	margin-top: 0.5rem;
 }
 
 /* Do's and Don'ts Sections */
@@ -177,16 +164,17 @@
 		font-size: 2rem;
 	}
 	
-	.experience-example {
+	.header-example {
 		padding: 1.5rem;
 	}
 	
-	.experience-header {
+	.contact-section {
 		flex-direction: column;
 		gap: 0.5rem;
+		align-items: center;
 	}
 	
-	.date-location {
-		text-align: left;
+	.full-name {
+		font-size: 1.125rem;
 	}
 }

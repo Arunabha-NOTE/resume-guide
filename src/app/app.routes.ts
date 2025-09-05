@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { Introduction } from './pages/introduction/introduction';
+import { Header } from './pages/header/header';
 import { Education } from './pages/education/education';
 import { Experience } from './pages/experience/experience';
 import { Skills } from './pages/skills/skills';
@@ -12,6 +13,7 @@ import { FinalThoughts } from './pages/final-thoughts/final-thoughts';
 export const routes: Routes = [
   { path: '', redirectTo: '/introduction', pathMatch: 'full' },
   { path: 'introduction', component: Introduction },
+  { path: 'header', component: Header },
   { path: 'education', component: Education },
   { path: 'experience', component: Experience },
   { path: 'skills', component: Skills },
