@@ -1,8 +1,8 @@
-<div class="w-full h-16 md:h-16 border-0 flex items-center justify-between px-4 bg-surface">
+<div class="w-full h-16 border-0 flex items-center px-4 navbar-container">
   <!-- Mobile hamburger menu (visible on mobile only) -->
   <button 
     (click)="toggleMobileMenu.emit()"
-    class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700 hover:text-gray-900 focus:outline-none"
+    class="md:hidden flex items-center justify-center w-10 h-10 text-white hover:text-blue-300 focus:outline-none navbar-button rounded-md"
     aria-label="Toggle mobile menu"
   >
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -15,12 +15,15 @@
     </svg>
   </button>
 
-  <!-- Desktop title (hidden on mobile) -->
-  <div class="hidden md:flex items-center">
+  <!-- Desktop title (visible on desktop only) -->
+  <div class="hidden md:flex items-center flex-1">
     <ng-container *ngFor="let item of leftItems">
-      <span class="text-lg font-bold text-gray-800">{{ item.label }}</span>
+      <span class="text-xl font-bold text-white">{{ item.label }}</span>
     </ng-container>
   </div>
+
+  <!-- Spacer for mobile (pushes right items to the right) -->
+  <div class="flex-1 md:hidden"></div>
 
   <!-- Right side items (always visible) -->
   <div class="flex gap-1 md:gap-2">
@@ -29,7 +32,7 @@
         *ngIf="item.url; else buttonTemplate"
         [href]="item.url" 
         [target]="item.target || '_self'"
-        class="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
+        class="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 text-sm font-medium text-white navbar-button rounded-md"
       >
         <i *ngIf="item.icon" [class]="item.icon"></i>
         <span class="text-xs md:text-sm">{{ item.label }}</span>
@@ -37,7 +40,7 @@
       <ng-template #buttonTemplate>
         <button 
           (click)="item.command && item.command({})"
-          class="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
+          class="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 text-sm font-medium text-white navbar-button rounded-md"
         >
           <i *ngIf="item.icon" [class]="item.icon"></i>
           <span class="text-xs md:text-sm">{{ item.label }}</span>

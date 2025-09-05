@@ -137,6 +137,18 @@
 		padding: 0 0.5rem;
 	}
 	
+	.resource-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		padding: 1rem 0;
+		text-align: left;
+	}
+	
+	.resource-icon {
+		align-self: flex-start;
+	}
+	
 	.guidelines-list {
 		margin: 1rem 0;
 	}

@@ -115,13 +115,18 @@ body.mobile-menu-open {
   .content-area {
     padding: 0.5rem !important;
     /* Add extra top padding on mobile to ensure content doesn't touch navbar */
-    padding-top: 1rem !important;
+    padding-top: 1.5rem !important;
   }
   
-  /* Ensure full width on mobile */
+  /* Additional top margin for all content pages */
   .content-area .p-card {
-    margin: 0;
+    margin: 0.5rem 0 0 0;
     border-radius: 0;
+  }
+  
+  .content-area .p-card-body {
+    padding: 1rem;
+    padding-top: 1.5rem;
   }
   
   /* Mobile typography adjustments */

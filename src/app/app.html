@@ -20,15 +20,15 @@
   ></div>
   
   <!-- Menu panel -->
-  <div class="fixed inset-y-0 left-0 w-64 bg-surface shadow-lg pt-16">
+  <div class="fixed inset-y-0 left-0 w-64 bg-gray-900/95 backdrop-blur-sm border-r border-blue-500/30 shadow-lg pt-16">
     <div class="p-4 h-full overflow-y-auto">
       <nav class="space-y-2">
         <a
           *ngFor="let item of mobileMenuItems"
           [routerLink]="item.routerLink"
           (click)="closeMobileMenu()"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
-          routerLinkActive="bg-blue-100 text-blue-900"
+          class="block px-3 py-2 text-base font-medium text-white hover:text-blue-300 hover:bg-blue-500/30 rounded-md transition-colors"
+          routerLinkActive="bg-blue-500/50 text-blue-200"
         >
           {{ item.label }}
         </a>
@@ -43,7 +43,7 @@
 </div>
 
 <!-- Main content area -->
-<div class="md:ml-72 pt-16 min-h-screen content-glass content-area">
+<div class="md:ml-72 pt-20 md:pt-16 min-h-screen content-glass content-area">
   <p-card class="p-4 md:p-8 max-w-none">
     <router-outlet></router-outlet>
   </p-card>
