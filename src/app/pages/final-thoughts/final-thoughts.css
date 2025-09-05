@@ -86,3 +86,64 @@
 		font-size: 1rem;
 	}
 }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+	.final-thoughts-grid {
+		gap: 2rem;
+	}
+	
+	.section-header {
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.5rem 0 1rem 0;
+		margin-bottom: 1.5rem;
+	}
+	
+	.header-icon {
+		font-size: 1.5rem;
+	}
+	
+	.header-title {
+		font-size: 1.75rem;
+	}
+	
+	.section-content {
+		padding: 0 0.5rem;
+	}
+	
+	.intro-text {
+		font-size: 1rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+	
+	.thoughts-list {
+		margin: 1rem 0;
+	}
+	
+	.thought-item {
+		font-size: 0.95rem;
+		padding: 0.5rem 0;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.header-title {
+		font-size: 1.5rem;
+	}
+	
+	.section-header {
+		padding: 0.25rem 0 0.75rem 0;
+		margin-bottom: 1rem;
+	}
+	
+	.intro-text {
+		font-size: 0.95rem;
+	}
+	
+	.thought-item {
+		font-size: 0.9rem;
+	}
+}

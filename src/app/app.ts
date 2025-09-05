@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
@@ -7,17 +7,20 @@ import { Navbar } from './components/navbar/navbar';
 import { Sidebar } from './components/sidebar/sidebar';
 import { MenuItem } from 'primeng/api';
 import { Card } from "primeng/card";
+import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
 
 declare let Lenis: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenubarModule, PanelMenuModule, Navbar, Sidebar, Card],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, MenubarModule, PanelMenuModule, Navbar, Sidebar, Card],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
+  isMobileMenuOpen = false;
+
   constructor(private router: Router) {}
 
   leftMenuItems: MenuItem[] = [
@@ -122,11 +125,36 @@ export class App implements OnInit {
     }
   ];
 
+  // Mobile menu items (only page links, no subsections)
+  mobileMenuItems: MenuItem[] = [
+    { label: 'Introduction', routerLink: '/introduction' },
+    { label: 'Header', routerLink: '/header' },
+    { label: 'Education', routerLink: '/education' },
+    { label: 'Experience', routerLink: '/experience' },
+    { label: 'Skills', routerLink: '/skills' },
+    { label: 'Projects', routerLink: '/projects' },
+    { label: 'Achievements', routerLink: '/achievements' },
+    { label: 'Certificates', routerLink: '/certificates' },
+    { label: 'Leadership', routerLink: '/leadership' },
+    { label: 'Final Thoughts', routerLink: '/final-thoughts' }
+  ];
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
+
   ngOnInit(): void {
     // Listen for route changes and scroll to top
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
+        // Close mobile menu on route change
+        this.closeMobileMenu();
+        
         // Scroll to top of the content area
         const contentArea = document.querySelector('.content-area');
         if (contentArea) {

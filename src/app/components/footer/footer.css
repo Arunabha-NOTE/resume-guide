@@ -48,10 +48,22 @@
 @media (max-width: 768px) {
   .footer {
     margin-top: 3rem;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
   }
   
   .footer-text {
     font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
   }
 }

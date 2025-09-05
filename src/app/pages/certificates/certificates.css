@@ -171,3 +171,63 @@
 		text-align: left;
 	}
 }
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+	.certificates-grid {
+		gap: 2rem;
+	}
+	
+	.section-header {
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.5rem 0 1rem 0;
+		margin-bottom: 1.5rem;
+	}
+	
+	.header-icon {
+		font-size: 1.5rem;
+	}
+	
+	.header-title {
+		font-size: 1.75rem;
+	}
+	
+	.section-content {
+		padding: 0 0.5rem;
+	}
+	
+	.certificates-example .section-content {
+		padding: 1rem;
+	}
+	
+	.dos-donts-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.subsection-title {
+		font-size: 1.25rem;
+	}
+	
+	.guideline-item {
+		font-size: 1rem;
+		padding: 0.5rem 0;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.header-title {
+		font-size: 1.5rem;
+	}
+	
+	.section-header {
+		padding: 0.25rem 0 0.75rem 0;
+		margin-bottom: 1rem;
+	}
+	
+	.certificates-example .section-content {
+		padding: 0.75rem;
+	}
+}

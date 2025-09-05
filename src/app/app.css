@@ -89,3 +89,61 @@ body::-webkit-scrollbar-thumb:hover {
 .sidebar-container {
   -webkit-overflow-scrolling: touch;
 }
+
+/* Mobile menu styles */
+.mobile-menu-overlay {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .content-area {
+    padding: 0.5rem !important;
+    /* Add extra top padding on mobile to ensure content doesn't touch navbar */
+    padding-top: 1rem !important;
+  }
+  
+  /* Ensure full width on mobile */
+  .content-area .p-card {
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  /* Mobile typography adjustments */
+  .content-area h1 {
+    font-size: 1.75rem;
+  }
+  
+  .content-area h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-area h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Mobile spacing */
+  .content-area .section-content {
+    padding: 1rem;
+  }
+  
+  /* Mobile card adjustments */
+  .content-area .p-card-body {
+    padding: 1rem;
+  }
+}

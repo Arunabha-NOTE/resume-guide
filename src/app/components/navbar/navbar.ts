@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { CommonModule } from '@angular/common';
@@ -14,4 +14,6 @@ import { CommonModule } from '@angular/common';
 export class Navbar {
   @Input() leftItems: MenuItem[] = [];
   @Input() rightItems: MenuItem[] = [];
+  @Input() isMobileMenuOpen = false;
+  @Output() toggleMobileMenu = new EventEmitter<void>();
 }

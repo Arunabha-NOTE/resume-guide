@@ -55,5 +55,49 @@ app-root {
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  scroll-margin-top: 100px; /* Account for fixed navbar */
+  scroll-margin-top: 120px; /* Account for fixed navbar (64px + extra space) */
+}
+
+/* Global Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Ensure proper touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text spacing on mobile */
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller text for very small screens */
+  html {
+    font-size: 14px;
+  }
+  
+  /* Tighter spacing on small screens */
+  .p-card-body {
+    padding: 1rem !important;
+  }
+}
+
+/* Ensure mobile menu doesn't interfere with content */
+@media (max-width: 767px) {
+  .mobile-menu-open {
+    overflow: hidden;
+  }
 }
