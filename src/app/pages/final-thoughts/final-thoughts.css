@@ -8,11 +8,13 @@
 	gap: 1.5rem;
 }
 
-/	.intro-text {
+.intro-text {
 		font-size: 1.125rem;
 		line-height: 1.6;
 		margin-bottom: 0.5rem;
-	}tion Layout */
+	}
+
+/* Section Layout */
 .final-thoughts-section {
 	margin-bottom: 1rem;
 }
