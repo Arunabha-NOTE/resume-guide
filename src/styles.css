@@ -91,7 +91,7 @@ app-root {
   
   /* Tighter spacing on small screens */
   .p-card-body {
-    padding: 1rem !important;
+    padding: 0.5rem !important;
   }
 }
 
